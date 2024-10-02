@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' as material;
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../neumorphic_box_shape.dart';
