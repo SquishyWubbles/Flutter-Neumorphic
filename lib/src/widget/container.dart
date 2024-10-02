@@ -118,7 +118,7 @@ class _NeumorphicContainer extends StatelessWidget {
     final shape = style.boxShape ?? NeumorphicBoxShape.rect();
 
     return DefaultTextStyle(
-      style: textStyle ?? Theme.of(context).textTheme.bodyLarge!, // Updated from bodyText2 to bodyLarge
+      style: textStyle ?? Theme.of(context).textTheme.bodyLarge!, // Correct usage
       child: AnimatedContainer(
         margin: margin,
         duration: duration,
