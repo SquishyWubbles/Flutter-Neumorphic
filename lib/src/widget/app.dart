@@ -85,16 +85,18 @@ class NeumorphicApp extends StatelessWidget {
     }
 
     return ThemeData(
-      primaryColor: theme.accentColor,
-      accentColor: theme.variantColor,
+      primaryColor: theme.baseColor, // Use the base color as primary
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.blue, // You can replace this with your desired primary color
+        accentColor: theme.variantColor, // Replace this line with the secondary color
+      ).copyWith(
+        secondary: theme.variantColor, // Set secondary color
+        brightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
+      ),
       iconTheme: theme.iconTheme,
-      brightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
-      primaryColorBrightness:
-          ThemeData.estimateBrightnessForColor(theme.accentColor),
-      accentColorBrightness:
-          ThemeData.estimateBrightnessForColor(theme.variantColor),
       textTheme: theme.textTheme,
       scaffoldBackgroundColor: theme.baseColor,
+      primaryColorBrightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
     );
   }
 

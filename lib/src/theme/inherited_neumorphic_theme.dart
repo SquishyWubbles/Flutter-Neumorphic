@@ -43,11 +43,9 @@ class NeumorphicThemeInherited extends InheritedWidget {
   void updateCurrentTheme(NeumorphicThemeData update) {
     if (value.useDark) {
       final newValue = value.copyWith(darkTheme: update);
-      //this.value = newValue;
       this.onChanged(newValue);
     } else {
       final newValue = value.copyWith(theme: update);
-      //this.value = newValue;
       this.onChanged(newValue);
     }
   }
@@ -56,11 +54,9 @@ class NeumorphicThemeInherited extends InheritedWidget {
     final update = themeUpdater(value.current);
     if (value.useDark) {
       final newValue = value.copyWith(darkTheme: update);
-      //this.value = newValue;
       this.onChanged(newValue);
     } else {
       final newValue = value.copyWith(theme: update);
-      //this.value = newValue;
       this.onChanged(newValue);
     }
   }

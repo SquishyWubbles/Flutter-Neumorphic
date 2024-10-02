@@ -115,33 +115,33 @@ class _NeumorphicContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final shape = this.style.boxShape ?? NeumorphicBoxShape.rect();
+    final shape = style.boxShape ?? NeumorphicBoxShape.rect();
 
     return DefaultTextStyle(
-      style: this.textStyle ?? material.Theme.of(context).textTheme.bodyText2!,
+      style: textStyle ?? Theme.of(context).textTheme.bodyLarge!, // Updated from bodyText2 to bodyLarge
       child: AnimatedContainer(
-        margin: this.margin,
-        duration: this.duration,
-        curve: this.curve,
+        margin: margin,
+        duration: duration,
+        curve: curve,
         child: NeumorphicBoxShapeClipper(
           shape: shape,
           child: Padding(
-            padding: this.padding,
-            child: this.child,
+            padding: padding,
+            child: child,
           ),
         ),
         foregroundDecoration: NeumorphicDecoration(
           isForeground: true,
           renderingByPath: shape.customShapePathProvider.oneGradientPerPath,
-          splitBackgroundForeground: this.drawSurfaceAboveChild,
-          style: this.style,
+          splitBackgroundForeground: drawSurfaceAboveChild,
+          style: style,
           shape: shape,
         ),
         decoration: NeumorphicDecoration(
           isForeground: false,
           renderingByPath: shape.customShapePathProvider.oneGradientPerPath,
-          splitBackgroundForeground: this.drawSurfaceAboveChild,
-          style: this.style,
+          splitBackgroundForeground: drawSurfaceAboveChild,
+          style: style,
           shape: shape,
         ),
       ),
